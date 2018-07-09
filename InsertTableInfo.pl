@@ -14,7 +14,7 @@ my  $dbn =DBI->connect("DBI:mysql:shareasale",$username,$password);
 open(X,$file);
 while(<X>){
 $_=~s/YOURUSERID/1286208/gim;
-my @f =split(/\|/,$_);
+my @f =split(/\t/,$_);
 #chomp @f;
 # 0 productID
 # 1 name
@@ -26,7 +26,7 @@ my @f =split(/\|/,$_);
 # 7 price
 # 8 retailprice
 # 11 description
-print $f[0],"\n";
+print $f[1],"\n";
 %fields=(	
 	productID=>$f[0],
 	name=>$f[1],
