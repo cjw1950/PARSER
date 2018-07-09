@@ -15,6 +15,7 @@ open(X,$file);
 while(<X>){
 $_=~s/YOURUSERID/1286208/gim;
 my @f =split(/\t/,$_);
+
 #chomp @f;
 # 0 productID
 # 1 name
@@ -26,7 +27,7 @@ my @f =split(/\t/,$_);
 # 7 price
 # 8 retailprice
 # 11 description
-print $f[1],"\n";
+#print $f[4],"\n";
 %fields=(	
 	productID=>$f[0],
 	name=>$f[1],
@@ -40,12 +41,12 @@ print $f[1],"\n";
 	description=>$f[9]
 );
 
-#  my ($stmt, @bind) = $sql->insert($table, \%fields);
-#  my $sth = $dbn->prepare($stmt);
-#     $sth->execute(@bind);
+  my ($stmt, @bind) = $sql->insert($table, \%fields);
+  my $sth = $dbn->prepare($stmt);
+    $sth->execute(@bind);
 
 
-# #print $f[0],"\t"#,$f[1],"\t",$f[2],"\t",$f[3],"\t",$f[4],"\t",$f[5],"\t",$f[6],"\t",$f[7],"\t",$f[8],"\t",$f[9],"\t",$f[11],"\n";
+ #print $f[0],"\t",$f[1],"\t",$f[2],"\t",$f[3],"\t",$f[4],"\t",$f[5],"\t",$f[6],"\t",$f[7],"\t",$f[8],"\t",$f[9],"\t",$f[11],"\n";
 # print $f[0],"\n";
  }
 close(X);
