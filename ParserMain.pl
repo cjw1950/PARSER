@@ -7,8 +7,6 @@ my $file = shift;
 open(X,$file);
 while(<X>){
 $_=~s/YOURUSERID/1286208/gim;
-
-
 my @f =split(/\|/,$_);
  
 # 0 productID
