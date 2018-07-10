@@ -43,7 +43,7 @@ my @f =split(/\t/,$_);
 
   my ($stmt, @bind) = $sql->insert($table, \%fields);
   my $sth = $dbn->prepare($stmt);
-    $sth->execute(@bind);
+     $sth->execute(@bind);
 
 
  #print $f[0],"\t",$f[1],"\t",$f[2],"\t",$f[3],"\t",$f[4],"\t",$f[5],"\t",$f[6],"\t",$f[7],"\t",$f[8],"\t",$f[9],"\t",$f[11],"\n";
