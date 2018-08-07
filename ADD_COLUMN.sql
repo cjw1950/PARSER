@@ -1,2 +1,1 @@
-select * from camera1
- Limit 1
+alter table wirelessspeakers add ID int auto_increment primary key first;
