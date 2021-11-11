@@ -1,0 +1,40 @@
+Perltidy version is 20210111
+
+<stdin>: Begin Error Output Stream
+
+43: print '"productID": ',$f[0],',"name":'''""',$f[1],'"'''","mercha ...
+                                ----------^
+found String where operator expected (previous token underlined)
+
+43: print '"productID": ',$f[0],',"name":'''""',$f[1],'"'''","mercha ...
+                                          --^
+found String where operator expected (previous token underlined)
+
+43: print '"productID": ',$f[0],',"name":'''""',$f[1],'"'''","mercha ...
+                                            --^
+found String where operator expected (previous token underlined)
+
+43: print '"productID": ',$f[0],',"name":'''""',$f[1],'"'''","mercha ...
+                                              ---------^
+found String where operator expected (previous token underlined)
+
+There is no previous '?' to match a ':' on line 43
+43: ... me":'''""',$f[1],'"'''","merchantID":'''""',$f[2],'"'''","Mercha ...
+                                            ^
+
+43: ... :'''""',$f[1],'"'''","merchantID":'''""',$f[2],'"'''","Merchant" ...
+                                          --^
+found String where operator expected (previous token underlined)
+
+43: ... '"'''","merchantID":'''""',$f[2],'"'''","Merchant":'''""',$f[3], ...
+                                         ---^
+found String where operator expected (previous token underlined)
+
+There is no previous '?' to match a ':' on line 43
+43: ... ink":'''""',$f[4],'"'''","thumbnail":'''""',$f[5],'"'''","BigIma ...
+                                            ^
+
+There is no previous '?' to match a ':' on line 43
+43: ... e":'''""',$f[7],'"'''","retailprice":'''""',$f[8],'"'''","descri ...
+                                            ^
+50: To save a full .LOG file rerun with -g

@@ -11,12 +11,12 @@ my  $password="mungyn1950";
 my %fields =();
 my  $dbn =DBI->connect("DBI:mysql:shareasale",$username,$password);
 
-# open(X,$file);
-# while(<X>){
-# $_=~s/YOURUSERID/1286208/gim;
-# my @f =split(/\t/,$_);
+open(X,$file);
+while(<X>){
+$_=~s/YOURUSERID/1286208/gim;
+my @f =split(/\|/,$_,12);
 
-#chomp @f;
+chomp @f;
 # 0 productID
 # 1 name
 # 2 merchantID
@@ -27,19 +27,19 @@ my  $dbn =DBI->connect("DBI:mysql:shareasale",$username,$password);
 # 7 price
 # 8 retailprice
 # 11 description
-# #print $f[4],"\n";
-# %fields=(	
-# 	productID=>$f[0],
-# 	name=>$f[1],
-# 	merchantID=>$f[2],
-# 	Merchant=>$f[3],
-# 	link=>$f[4],
-# 	thumbnail=>$f[5],
-# 	BigImage=>$f[6],
-# 	price=>$f[7],
-# 	retailprice=>$f[8],
-# 	description=>$f[9]
-# );
+#print $f[4],"\n";
+%fields=(	
+	productID=>$f[0],
+	name=>$f[1],
+	merchantID=>$f[2],
+	Merchant=>$f[3],
+	link=>$f[4],
+	thumbnail=>$f[5],
+	BigImage=>$f[6],
+	price=>$f[7],
+	retailprice=>$f[8],
+	description=>$f[9]
+);
 
 #   my ($stmt, @bind) = $sql->insert($table, \%fields);
 #   my $sth = $dbn->prepare($stmt);
