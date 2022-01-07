@@ -4,17 +4,17 @@
 use DBI;
 use SQL::Abstract;
 my $sql = SQL::Abstract->new;
-my $driver="DBI:mysql";
+my $localhost='127.0.0.1';
 
 my $database="shareasale";
-my  $username="root";
-my  $password="mungyn1950";
-my $dsn="DBI:$driver:database=$database";
+my  $user="root";
+my  $pass="mungyn1950";
+my $dsn="dbi:mysql:shareAsale@127.0.0.1:54652";
 my $file = shift;
 my $table =shift;
 
 my %fields =();
-my  $dbn =DBI->connect($dsn,$username,$password) or die "$DBI::errstr";
+my  $dbn =DBI->connect($dsn,$user,$pass) or die "$DBI::errstr";
 
 open(X,$file);
 while(<X>){
@@ -46,9 +46,9 @@ sort %fields=(
 	description=>$f[9]
 );
                                                                         
-#   my ($stmt, @bind) = $sql->insert($table, \%fields);
-# #   my $sth = $dbn->prepare($stmt);
-#      $sth->execute(@bind);
+  my ($stmt, @bind) = $sql->insert($table, \%fields);
+  my $sth = $dbn->prepare($stmt);
+     $sth->execute(@bind);
 # foreach((my $keys,my $values)= each(%fields)){
 #     print $keys,"\t",$values,"\n";
 #         print $values,"\n";

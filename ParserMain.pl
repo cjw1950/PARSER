@@ -41,26 +41,24 @@ $f[11]=~s/\'//gim;
  #json
 print '{';
 print 'productID: ',
-'"',$f[0],'",',
-,'name:',
-,"\"$f[1]\",",
-,'merchantID:',
-,"\"$f[2]\",",
-,'Merchant:',
-,"\"$f[3]\",",
-,'link:',
-,"\"$f[4]\",",
-,'thumbnail:',
-,"\"$f[5]\",",
-,'BigImage:',
-,"\"$f[6]\",",
-,'price:',
-,"\"$f[7]\",",
-,'retailprice:',
-,"\"$f[8]\",",
-,'description:',
-"\"$f[11]\"";
-
+'"',$f[0],'"',
+'name:',"\"$f[1]\"",
+'merchantID:',
+'"',$f[2],'"',
+'Merchant:',
+'"',$f[3],'"',
+'link:',
+'"',$f[4],'"',
+'thumbnail:',
+'"',$f[5],'"',
+'BigImage:','"',
+'"',$f[6],'"',
+'price:',
+'"',$f[7],'"',
+'retailprice:',
+'"',$f[8],'"',
+'description:'
+,"\"$f[11]\"";
 print '},',"\n";
 
 }
