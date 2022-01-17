@@ -1,15 +1,13 @@
 #!/usr/bin/perl
-#ProductID|Name|MerchantID|Merchant|Link|Thumbnail|BigImage|Price|RetailPrice|Category|SubCategory|Description|Custom1|Custom2|Custom3|Custom4|Custom5|LastUpdated|status|manufacturer|partnumber|merchantCategory|merchantSubcategory|shortDescription|ISBN|UPC 
+#ProductID|Name|MerchantID|Merchant|Link|Thumbnail|BigImage|Price|RetailPrice|Category|SubCategory|Description|Custom1|Custom2|Custom3|Custom4|Custom5|LastUpdated|status|manufacturer|partnumber|merchantCategory|merchantSubcategory|shortDescription|ISBN|UPC
 #use strict;
 use DBI;
 use SQL::Abstract;
 my $sql = SQL::Abstract->new;
-my $localhost='127.0.0.1';
 
-my $database="shareasale";
 my  $user="root";
 my  $pass="mungyn1950";
-my $dsn="dbi:mysql:shareAsale@127.0.0.1:54652";
+my $dsn="dbi:mysql:shareAsale:127.0.0.1:3306:";
 my $file = shift;
 my $table =shift;
 
@@ -33,7 +31,7 @@ chomp @f;
 # 8 retailprice
 # 11 description
 # #print $f[4],"\n";
-sort %fields=(	
+sort %fields=(
 	productID=>$f[0],
 	name=>$f[1],
 	merchantID=>$f[2],
@@ -45,16 +43,17 @@ sort %fields=(
 	retailprice=>$f[8],
 	description=>$f[9]
 );
-                                                                        
+
   my ($stmt, @bind) = $sql->insert($table, \%fields);
   my $sth = $dbn->prepare($stmt);
      $sth->execute(@bind);
-# foreach((my $keys,my $values)= each(%fields)){
-#     print $keys,"\t",$values,"\n";
-#         print $values,"\n";
-# }
+  foreach((my $keys,my $values)= each(%fields)){
+    print $keys,"\t",$values,"\n";
+        print $values,"\n";
+ }
 
 # #  print $f[0],"\t",$f[1],"\t",$f[2],"\t",$f[3],"\t",$f[4],"\t",$f[5],"\t",$f[6],"\t",$f[7],"\t",$f[8],"\t",$f[9],"\t",$f[11],"\n";
 # # # print $f[0],"\n";
- }
-# close(X);
+
+} 
+ close(X);
