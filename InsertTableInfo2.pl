@@ -5,9 +5,13 @@ use DBI;
 use SQL::Abstract;
 my $sql = SQL::Abstract->new;
 
-my  $user="root";
-my  $pass="mungyn1950";
-my $dsn="dbi:mysql:shareAsale:127.0.0.1:3306:";
+my  $user="sql5468722";
+my  $pass="t1iFtAh9F6";
+my $driver="mysql";
+my $db ="sql5468722";
+my $host="sql5.freemysqlhosting.net";
+my $port = "3306";
+my $dsn="dbi:$driver:database=$db;host=$host;port=$port";
 my $file = shift;
 my $table =shift;
 
@@ -47,13 +51,13 @@ sort %fields=(
   my ($stmt, @bind) = $sql->insert($table, \%fields);
   my $sth = $dbn->prepare($stmt);
      $sth->execute(@bind);
-  foreach((my $keys,my $values)= each(%fields)){
-    print $keys,"\t",$values,"\n";
-        print $values,"\n";
+  # foreach((my $keys,my $values)= each(%fields)){
+  #   print $keys,"\t",$values,"\n";
+  #       print $values,"\n";
  }
 
 # #  print $f[0],"\t",$f[1],"\t",$f[2],"\t",$f[3],"\t",$f[4],"\t",$f[5],"\t",$f[6],"\t",$f[7],"\t",$f[8],"\t",$f[9],"\t",$f[11],"\n";
 # # # print $f[0],"\n";
 
-} 
+
  close(X);
