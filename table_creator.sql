@@ -1,4 +1,5 @@
 
+use shareasale
 create table vap_prod(
 id int auto_increment primary key,
 productID text,
@@ -13,4 +14,3 @@ retailPrice text,
 Category    text,
 description text
  );
-
