@@ -5,12 +5,22 @@ use DBI;
 use SQL::Abstract;
 my $sql = SQL::Abstract->new;
 
-my  $user="sql5468722";
-my  $pass="t1iFtAh9F6";
+# my  $user="sql5468722";
+# my  $pass="t1iFtAh9F6";
+# my $driver="mysql";
+# my $db ="sql5468722";
+# my $host="sql5.freemysqlhosting.net";
+# my $port = "3306";
+
+
+
+my  $user="root";
+my  $pass="mungyn1950";
 my $driver="mysql";
-my $db ="sql5468722";
-my $host="sql5.freemysqlhosting.net";
+my $db ="shareasale";
+my $host="127.0.0.1";
 my $port = "3306";
+ 
 my $dsn="dbi:$driver:database=$db;host=$host;port=$port";
 my $file = shift;
 my $table =shift;
